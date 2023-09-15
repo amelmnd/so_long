@@ -19,10 +19,13 @@ SRCS_UTILS =	$(DIR_UTILS)exit_free.c $(DIR_UTILS)ft_create_array.c
 DIR_GNL =		get_next_line/
 SRCS_GNL =	$(DIR_GNL)get_next_line_utils.c $(DIR_GNL)get_next_line.c
 
+DIR_PARS = parsing/
+SRCS_PARS =	$(DIR_PARS)check_map.c\
+
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\
 
-SRCS = $(SRCS_GNL) $(SRCS_UTILS) $(ORIGIN)
+SRCS = $(SRCS_GNL) $(SRCS_UTILS) $(SRCS_PARS) $(ORIGIN)
 OBJS = $(SRCS:.c=.o)
 
 # RULES
