@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/15 15:54:51 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/15 16:34:34 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main(int ac, char **av)
 {
 	int		fd1;
 	int		fd2;
-	char	**map;
 	int		nb_line;
 	int		len_line;
+	char	**map;
 
 	map = NULL;
 	if (ac != 2)
