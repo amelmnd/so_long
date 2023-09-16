@@ -6,12 +6,19 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:57:08 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/15 18:26:19 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/16 11:36:50 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "so_long.h"
+
+void	check_first_last_line(int i, int j, char **map, int nb_line)
+{
+	if ((i == 0 && map[i][j] != '1') || (i == (nb_line - 1)
+			&& map[i][j] != '1'))
+		ft_exit_free(-1, NULL, "map not closed");
+}
 
 void	check_cara(char c, int *perso, int *end, int *item)
 {
@@ -31,11 +38,11 @@ void	check_cara(char c, int *perso, int *end, int *item)
 
 void	check_map(char **map, int nb_line, int len_line)
 {
-	int i;
-	int j;
-	int perso;
-	int end;
-	int item;
+	int	i;
+	int	j;
+	int	perso;
+	int	end;
+	int	item;
 
 	i = 0;
 	perso = 0;
@@ -48,9 +55,7 @@ void	check_map(char **map, int nb_line, int len_line)
 			ft_exit_free(-1, NULL, "map not closed");
 		while (j < len_line)
 		{
-			if ((i == 0 && map[i][j] != '1') || (i == (nb_line - 1)
-					&& map[i][j] != '1'))
-				ft_exit_free(-1, NULL, "map not closed");
+			check_first_last_line(i, j, map, nb_line);
 			check_cara(map[i][j], &perso, &end, &item);
 			j++;
 		}
