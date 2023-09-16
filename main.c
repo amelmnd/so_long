@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/15 17:42:50 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/16 11:39:54 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ int	main(int ac, char **av)
 	if (fd1 == -1 || fd2 == -1)
 		ft_exit_free(-1, NULL, "open");
 	ft_file_length(fd1, &len_line, &nb_line);
-	if (len_line == nb_line)
-		ft_exit_free(-1, NULL, "map is square");
+	// if (len_line == nb_line) // un carre est un rectangle
+	// 	ft_exit_free(-1, NULL, "map is square");
 	map = ft_create_multi_array(fd2, nb_line, map);
+	print_map(map);
 	check_map(map, nb_line, len_line);
-	system("leaks so_long");
+	// system("leaks so_long");
 	return (0);
 }

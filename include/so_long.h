@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:43:44 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/15 17:02:46 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/16 11:27:57 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # include <stdlib.h> //for malloc
 # include <unistd.h> //for write
 
+//for dev
+void	print_map(char **array);
+
 // utils
 char	*get_next_line(int fd);
 void	ft_exit_free(int status, char *tab, char *message);
@@ -30,5 +33,6 @@ void	ft_file_length(int fd, int *len_line, int *nb_line);
 
 // parsing
 void	check_map(char **map, int nb_line, int len_line);
+void	valid_map(char **map);
 
 #endif

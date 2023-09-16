@@ -14,13 +14,17 @@ CFLAGS = -Wall -Wextra -Werror -I./include/
 CDFLAGS = -Wall -Wextra -Werror -g -I./include/
 
 DIR_UTILS = utils/
-SRCS_UTILS =	$(DIR_UTILS)exit_free.c $(DIR_UTILS)ft_create_array.c
+SRCS_UTILS =	$(DIR_UTILS)exit_free.c \
+				$(DIR_UTILS)ft_create_array.c \
+				$(DIR_UTILS)for_dev.c \
+
 
 DIR_GNL =		get_next_line/
 SRCS_GNL =	$(DIR_GNL)get_next_line_utils.c $(DIR_GNL)get_next_line.c
 
 DIR_PARS = parsing/
 SRCS_PARS =	$(DIR_PARS)check_map.c\
+			$(DIR_PARS)ft_floof_fill.c\
 
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\
