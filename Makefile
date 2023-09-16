@@ -24,7 +24,8 @@ SRCS_GNL =	$(DIR_GNL)get_next_line_utils.c $(DIR_GNL)get_next_line.c
 
 DIR_PARS = parsing/
 SRCS_PARS =	$(DIR_PARS)check_map.c\
-			$(DIR_PARS)ft_floof_fill.c\
+			$(DIR_PARS)valid_map.c\
+			$(DIR_PARS)ft_parsing.c\
 
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\

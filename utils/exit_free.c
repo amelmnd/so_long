@@ -6,23 +6,42 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:09:26 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/15 16:54:25 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/16 16:52:13 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "so_long.h"
 
-void	ft_exit_free(int status, char *tab, char *message)
+void	ft_free_2d_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		ft_free_str(&array[i]);
+		i++;
+	}
+	free(array);
+}
+
+void	ft_exit_free(int status, char **tab, char *str, char *message)
 {
 	if (status == 0)
 	{
-		ft_free_str(&tab);
+		if (tab)
+			ft_free_2d_array(tab);
+		if (str)
+			ft_free_str(&str);
 		exit(EXIT_SUCCESS);
 	}
 	else if (status == -1)
 	{
-		ft_free_str(&tab);
+		if (tab)
+			ft_free_2d_array(tab);
+		if (str)
+			ft_free_str(&str);
 		ft_printf("Error : %s\n", message);
 		if (errno)
 			perror(message);
