@@ -16,6 +16,7 @@ CDFLAGS = -Wall -Wextra -Werror -g -I./include/
 DIR_UTILS = utils/
 SRCS_UTILS =	$(DIR_UTILS)exit_free.c \
 				$(DIR_UTILS)ft_create_array.c \
+				$(DIR_UTILS)fn_utils.c \
 				$(DIR_UTILS)for_dev.c \
 
 

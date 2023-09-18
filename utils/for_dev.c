@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 10:10:58 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/16 11:38:24 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/18 11:01:41 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ void	print_map(char **array)
 	int	j;
 
 	i = 0;
+	if (!array)
+	{
+		printf("print_map: array is NULL\n");
+		return ;
+	}
 	while (array[i])
 	{
 		j = 0;

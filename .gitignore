@@ -60,3 +60,4 @@ exec
 a.out
 so_long
 so_long.dSYM/*
+.vscode/

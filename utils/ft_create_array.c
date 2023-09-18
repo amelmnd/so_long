@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:33:41 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/16 15:43:29 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/18 11:03:34 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ char	**ft_create_multi_array(int fd2, int nb_line, char **map)
 		map[y] = create_line(fd2);
 		y++;
 	}
+	map[y] = NULL;
 	return (map);
 }

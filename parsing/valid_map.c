@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:11:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/16 19:28:25 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/18 11:17:49 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,5 @@ void	valid_map(char **map, int nb_line, int len_line)
 		ft_exit_free(-1, map, NULL, "map is not valid");
 	flood_fill_call(temp, &search, &x, &y);
 	check_map_isvalid(temp);
-	//DELETE
-	printf("valid map ********\n");
-	print_map(temp);
-	//DELETE
 	ft_free_2d_array(temp);
 }
