@@ -28,10 +28,15 @@ SRCS_PARS =	$(DIR_PARS)check_map.c\
 			$(DIR_PARS)valid_map.c\
 			$(DIR_PARS)ft_parsing.c\
 
+DIR_GAME = game/
+SRCS_GAME =	$(DIR_GAME)create_window.c\
+			$(DIR_GAME)event.c\
+			$(DIR_GAME)manage_game.c\
+
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\
 
-SRCS = $(SRCS_GNL) $(SRCS_UTILS) $(SRCS_PARS) $(ORIGIN)
+SRCS = $(SRCS_GNL) $(SRCS_UTILS) $(SRCS_PARS) $(SRCS_GAME) $(ORIGIN)
 OBJS = $(SRCS:.c=.o)
 
 # RULES
@@ -55,14 +60,6 @@ run: $(OBJ) libft minilibX
 	$(CC) $(CFLAGS) -I ./include $(SRCS) ./include/libft/libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(COLOUR_MAGENTA) generate with minilbX 🥳$(END_COLOR)"
 	@echo "$(COLOUR_GREEN)$(NAME) generate 🍀$(END_COLOR)"
-
-# $(NAME): $(OBJS) libft
-# 	@$(CC) -I ./include $(OBJS) ./include/libft/libft.a $(CFLAGS) -o $(NAME)
-# 	@echo "$(COLOUR_MAGENTA)objs & NAME generate 🌸$(END_COLOR)"
-
-# run: libft
-# 	@$(CC) -I ./include $(SRCS) ./include/libft/libft.a $(CDFLAGS) -o $(NAME)
-# 	@echo "$(COLOUR_GREEN)$(NAME) generate 🍀$(END_COLOR)"
 
 norme:
 	norminette
