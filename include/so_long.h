@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:43:44 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 11:10:22 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/18 11:29:24 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include "../get_next_line/get_next_line.h" //for open
+#include "../mlx/mlx.h"
 // selon les besoins du projet, ajouter les includes nécessaires
 # include <errno.h>  //for errno
 # include <fcntl.h>  //for open

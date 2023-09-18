@@ -40,14 +40,29 @@ all: $(NAME)
 libft:
 	@make -C ./include/libft
 
+minilibX:
+	@make -C ./mlx
 
-$(NAME): $(OBJS) libft
-	@$(CC) -I ./include $(OBJS) ./include/libft/libft.a $(CFLAGS) -o $(NAME)
+%.o: %.c
+	@$(CC) $(CFLAGS) -Imlx -c $< -o $@
+
+$(NAME): $(OBJ) $(OBJS) libft minilibX
+	$(CC) $(CFLAGS) -I ./include $(OBJS) ./include/libft/libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "$(COLOUR_MAGENTA) generate with minilbX 🥳$(END_COLOR)"
 	@echo "$(COLOUR_MAGENTA)objs & NAME generate 🌸$(END_COLOR)"
 
-run: libft
-	@$(CC) -I ./include $(SRCS) ./include/libft/libft.a $(CDFLAGS) -o $(NAME)
+run: $(OBJ) libft minilibX
+	$(CC) $(CFLAGS) -I ./include $(SRCS) ./include/libft/libft.a -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@echo "$(COLOUR_MAGENTA) generate with minilbX 🥳$(END_COLOR)"
 	@echo "$(COLOUR_GREEN)$(NAME) generate 🍀$(END_COLOR)"
+
+# $(NAME): $(OBJS) libft
+# 	@$(CC) -I ./include $(OBJS) ./include/libft/libft.a $(CFLAGS) -o $(NAME)
+# 	@echo "$(COLOUR_MAGENTA)objs & NAME generate 🌸$(END_COLOR)"
+
+# run: libft
+# 	@$(CC) -I ./include $(SRCS) ./include/libft/libft.a $(CDFLAGS) -o $(NAME)
+# 	@echo "$(COLOUR_GREEN)$(NAME) generate 🍀$(END_COLOR)"
 
 norme:
 	norminette
@@ -57,11 +72,12 @@ leaks: all
 
 clean:
 	@cd ./include/libft; make clean
+	@cd ./mlx; make clean
 	@rm -rf $(OBJS)
 	@echo "$(COLOUR_BLUE) clean 🐟$(END_COLOR)"
 
-fclean : clean
-	@cd ./include/libft && make fclean
+fclean: clean
+	@cd ./include/libft; make fclean
 	@rm -rf $(NAME) $(NAME)
 	@echo "$(COLOUR_BLUE)$(NAME) fclean 🐳$(END_COLOR)"
 
