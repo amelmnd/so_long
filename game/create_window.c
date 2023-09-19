@@ -6,24 +6,24 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:22:44 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 16:46:10 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/19 11:20:31 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_window new_game(int w, int h, char *str)
+t_window	new_game(int w, int h, char *str)
 {
 	void	*mlx_ptr;
 
 	//INIT PROGRAM
 	mlx_ptr = mlx_init();
-	return ((t_window) {mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h});
+	return ((t_window){mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h});
 }
 
-t_img	new_img(int w, int h, t_window window)
+t_image	new_img(int w, int h, t_window window)
 {
-	t_img	image;
+	t_image	image;
 
 	image.win = window;
 	image.img_ptr = mlx_new_image(window.mlx_ptr, w, h);
@@ -34,12 +34,13 @@ t_img	new_img(int w, int h, t_window window)
 	return (image);
 }
 
-void	put_pixel_img(t_img img, int x, int y, int color)
+void	put_pixel_img(t_image img, int x, int y, int color)
 {
 	char	*dst;
 
-	if (x >= 0 && y >= 0 && x < img.w && y < img.h) {
+	if (x >= 0 && y >= 0 && x < img.w && y < img.h)
+	{
 		dst = img.addr + (y * img.line_len + x * (img.bpp / 8));
-		*(unsigned int *) dst = color;
+		*(unsigned int *)dst = color;
 	}
 }
