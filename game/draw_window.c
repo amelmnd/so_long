@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:37:17 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 11:39:25 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 13:21:04 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	print_img(t_window window, char *path, int x, int y)
 
 void	print_pixel(t_window window, int image_width, int image_heigth)
 {
-	t_image image;
-	int count_width;
-	int count_heigth;
+	t_image	image;
+	int		count_width;
+	int		count_heigth;
 
 	count_width = 0;
 	image = new_img(image_width, image_heigth, window);
@@ -49,6 +49,6 @@ void	print_pixel(t_window window, int image_width, int image_heigth)
 		}
 		count_width++;
 	}
-	mlx_put_image_to_window(image.win.mlx_ptr, image.win.win_ptr, image.img_ptr,
-			0, 0);
+	mlx_put_image_to_window(image.win.mlx_ptr, image.win.win_ptr,
+		image.img_ptr, 0, 0);
 }

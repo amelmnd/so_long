@@ -64,7 +64,7 @@ run: $(OBJ) libft minilibX
 	@echo "$(COLOUR_GREEN)$(NAME) generate 🍀$(END_COLOR)"
 
 norme:
-	norminette
+	norminette $(SRCS) ./include/*.h
 
 leaks: all
 	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)

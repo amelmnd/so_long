@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:57:08 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 17:22:42 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 13:15:44 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void	check_map(t_data *data)
 	int	end;
 	int	item;
 
-	i = 0;
+	i = -1;
 	perso = 0;
 	end = 0;
 	item = 0;
-	while (i < data->nb_line)
+	while (++i < data->nb_line)
 	{
 		j = 0;
 		if (data->map[i][0] != '1' || data->map[i][data->len_line - 1] != '1')
@@ -59,7 +59,6 @@ void	check_map(t_data *data)
 			check_cara(data->map[i][j], &perso, &end, &item);
 			j++;
 		}
-		i++;
 	}
 	if (perso == 0 || end == 0 || item == 0)
 		ft_exit_free(-1, NULL, NULL, "missing element");

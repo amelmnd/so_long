@@ -6,19 +6,17 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:40:02 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 12:49:02 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 13:19:17 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+//TODO GERER LA COLLECTE DES ITEMS
 int	check_position(t_data *data, char position)
 {
 	if (position == '0')
-	{
-		printf("Ok\n");
 		return (1);
-	}
 	else if (position == 'C')
 	{
 		printf("item\n");
@@ -105,6 +103,7 @@ void	ft_move_left(t_data *data)
 		exit(EXIT_SUCCESS);
 	}
 }
+
 void	ft_move_right(t_data *data)
 {
 	char	position;

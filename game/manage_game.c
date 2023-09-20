@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:44:11 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 10:53:18 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 13:06:43 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	manage_game(t_data *data)
 	map = data->map;
 	nb_line = data->nb_line;
 	len_line = data->len_line;
-	image_width = len_line * 100;
-	image_heigth = nb_line * 100;
+	image_width = len_line * 50;
+	image_heigth = nb_line * 50;
 	window = new_game(data, image_width, image_heigth, "so_long");
 	//taille de la fenetre
 	if (!window.mlx_ptr || !window.win_ptr)
