@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:40:02 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:08:11 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 17:26:45 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	ft_move_left(t_data *data)
 		|| data->end_col != data->player_col)
 		data->map[data->end_line][data->end_col] = 'E';
 }
+
 void	ft_move_right(t_data *data)
 {
 	char	position;

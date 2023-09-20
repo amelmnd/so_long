@@ -6,13 +6,11 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:24:27 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:06:24 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 17:22:26 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-//TODO GERER LA COLLECTE DES ITEMS
 
 void	collect_item(char position, t_data *data)
 {
@@ -24,7 +22,8 @@ void	collect_item(char position, t_data *data)
 	{
 		data->not_finish = 0;
 	}
-};
+}
+
 void	is_finished(t_data *data, char position)
 {
 	if (data->not_finish == 1)
