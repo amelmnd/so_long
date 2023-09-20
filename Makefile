@@ -33,6 +33,7 @@ SRCS_GAME =	$(DIR_GAME)create_window.c\
 			$(DIR_GAME)event.c\
 			$(DIR_GAME)manage_game.c\
 			$(DIR_GAME)draw_window.c\
+			$(DIR_GAME)move_player.c\
 
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\

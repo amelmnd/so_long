@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:55:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 17:43:45 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:59:40 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ int	ft_mouse_event(t_window *window)
 
 int	ft_keyboard_event(int keycode, t_window *window)
 {
+	char	position;
+
+	position = 0;
+	print_map(window->data->map);
+	printf("position = %c\n", position);
+	printf("map[player_line][player_col] = map[%d][%d]\n",
+			window->data->player_line,
+			window->data->player_col);
 	if (keycode == 53)
 	{
 		if (window)
@@ -28,12 +36,32 @@ int	ft_keyboard_event(int keycode, t_window *window)
 		exit(EXIT_SUCCESS);
 	}
 	if (keycode == 13 || keycode == 126 || keycode == 6)
-		printf("up\n");
+	{
+		printf("\nup\n");
+		ft_move_up(window->data);
+		printf("line = %d, col = %d\n", window->data->player_line,
+				window->data->player_col);
+	}
 	else if (keycode == 1 || keycode == 125)
+	{
 		printf("down\n");
+		ft_move_down(window->data);
+		printf("line = %d, col = %d\n", window->data->player_line,
+				window->data->player_col);
+	}
 	else if (keycode == 0 || keycode == 123 || keycode == 12)
+	{
 		printf("left\n");
+		ft_move_left(window->data);
+		printf("line = %d, col = %d\n", window->data->player_line,
+				window->data->player_col);
+	}
 	else if (keycode == 2 || keycode == 124)
+	{
 		printf("right\n");
+		ft_move_right(window->data);
+		printf("line = %d, col = %d\n", window->data->player_line,
+				window->data->player_col);
+	}
 	return (0);
 }

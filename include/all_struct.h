@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   all_struct.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/20 12:51:51 by amennad           #+#    #+#             */
+/*   Updated: 2023/09/20 13:01:36 by amennad          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCT_SO_LONG_H
 # define STRUCT_SO_LONG_H
+//TODO PROBLEME DE NORME
 
 // structs
-
 typedef struct s_data
 {
 	int			len_line;
@@ -10,8 +22,8 @@ typedef struct s_data
 	int			nb_move;
 	int			nb_item;
 	int			nb_collected;
-	int			player_x;
-	int			player_y;
+	int			player_col;
+	int			player_line;
 	char		**map;
 }				t_data;
 
@@ -37,7 +49,5 @@ typedef struct s_image
 	int			endian;
 	int			line_len;
 }				t_image;
-
-
 
 #endif

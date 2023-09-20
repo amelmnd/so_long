@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 10:46:02 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:13:06 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	init_data(t_data *data)
 	data->nb_move = 0;
 	data->nb_item = 0;
 	data->nb_collected = 0;
-	data->player_x = 0;
-	data->player_y = 0;
+	data->player_line = 0;
+	data->player_col = 0;
 }
 
 // typedef struct s_data
@@ -59,8 +59,8 @@ int	main(int ac, char **av)
 	printf("nb_move = %d\n", data.nb_move);
 	printf("nb_item = %d\n", data.nb_item);
 	printf("nb_collected = %d\n", data.nb_collected);
-	printf("player_x = %d\n", data.player_x);
-	printf("player_y = %d\n", data.player_y);
+	printf("player_line = %d\n", data.player_line);
+	printf("player_col = %d\n", data.player_col);
 	check_file_name(av[1]); //✅
 	ft_parsing(av[1], &data);
 	print_map(data.map);
@@ -69,8 +69,8 @@ int	main(int ac, char **av)
 	printf("nb_move = %d\n", data.nb_move);
 	printf("nb_item = %d\n", data.nb_item);
 	printf("nb_collected = %d\n", data.nb_collected);
-	printf("player_x = %d\n", data.player_x);
-	printf("player_y = %d\n", data.player_y);
+	printf("player_line = %d\n", data.player_line);
+	printf("player_col = %d\n", data.player_col);
 	// system("leaks so_long");
 	manage_game(&data);
 	// check_file_name(av[1]);

@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:11:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 17:26:21 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:08:15 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_flood_fill(char **temp, int x, int y)
 		temp[x][y] = 'F';
 }
 
-int	search_element(char **map, int *x, int *y, char cara)
+int	search_element(char **map, int *col, int *row, char cara)
 {
 	int	i;
 	int	j;
@@ -37,8 +37,8 @@ int	search_element(char **map, int *x, int *y, char cara)
 					+ 1][j] == 'E' || map[i - 1][j] == 'E' || map[i][j
 					+ 1] == 'E' || map[i][j - 1] == 'E'))
 			{
-				*x = i;
-				*y = j;
+				*col = i;
+				*row = j;
 				return (1);
 			}
 			j++;
@@ -81,14 +81,14 @@ void	flood_fill_call(char **temp, int *search, int *x, int *y)
 
 void	valid_map(t_data *data)
 {
-	int		x;
-	int		y;
+	int		col;
+	int		row;
 	int		i;
 	int		search;
 	char	**temp;
 
-	x = 0;
-	y = 0;
+	col = 0;
+	row = 0;
 	i = 0;
 	temp = (char **)malloc(data->nb_line * sizeof(char *));
 	while (i < data->nb_line)
@@ -97,12 +97,12 @@ void	valid_map(t_data *data)
 		ft_strncpy(temp[i], data->map[i], data->len_line);
 		i++;
 	}
-	search = search_element(data->map, &x, &y, 'P');
-	data->player_x = x;
-	data->player_y = y;
+	search = search_element(data->map, &col, &row, 'P');
+	data->player_col = row;
+	data->player_line = col;
 	if (search == 0)
 		ft_exit_free(-1, data->map, NULL, "map is not valid");
-	flood_fill_call(temp, &search, &x, &y);
+	flood_fill_call(temp, &search, &col, &row);
 	check_map_isvalid(temp);
 	ft_free_2d_array(temp);
 }
