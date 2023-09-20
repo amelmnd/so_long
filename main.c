@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:05:16 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 17:43:42 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	init_data(t_data *data)
 	data->player_line = 0;
 	data->player_col = 0;
 	data->not_finish = 0;
+	data->nb_move = 0;
+
+
 }
 
 // typedef struct s_data
