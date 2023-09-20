@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:33:41 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 11:03:34 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:20:59 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*create_line(int fd)
 	return (line);
 }
 
-void	ft_file_length(int fd, int *len_line, int *nb_line)
+void	ft_file_length(int fd, t_data *data)
 {
 	int		i;
 	char	*line;
@@ -44,10 +44,10 @@ void	ft_file_length(int fd, int *len_line, int *nb_line)
 	line = create_line(fd);
 	if (!line || ft_strline(line) < 3)
 		ft_exit_free(-1, NULL, NULL, "bad map");
-	*len_line = ft_strline(line);
+	data->len_line = ft_strline(line);
 	while (line)
 	{
-		if (ft_strline(line) != *len_line)
+		if (ft_strline(line) != data->len_line)
 		{
 			ft_exit_free(-1, NULL, line, "not good map");
 		}
@@ -55,19 +55,18 @@ void	ft_file_length(int fd, int *len_line, int *nb_line)
 		free(line);
 		line = create_line(fd);
 	}
-	*nb_line = i;
+	data->nb_line = i;
 }
 
-char	**ft_create_multi_array(int fd2, int nb_line, char **map)
+void	ft_create_multi_array(int fd2, t_data *data)
 {
 	int	y;
 
 	y = 0;
-	while (y < nb_line)
+	while (y < data->nb_line)
 	{
-		map[y] = create_line(fd2);
+		data->map[y] = create_line(fd2);
 		y++;
 	}
-	map[y] = NULL;
-	return (map);
+	data->map[y] = NULL;
 }

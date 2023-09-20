@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:57:08 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/16 15:08:50 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:22:42 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_cara(char c, int *perso, int *end, int *item)
 		ft_exit_free(-1, NULL, NULL, "invalid character");
 }
 
-void	check_map(char **map, int nb_line, int len_line)
+void	check_map(t_data *data)
 {
 	int	i;
 	int	j;
@@ -48,19 +48,20 @@ void	check_map(char **map, int nb_line, int len_line)
 	perso = 0;
 	end = 0;
 	item = 0;
-	while (i < nb_line)
+	while (i < data->nb_line)
 	{
 		j = 0;
-		if (map[i][0] != '1' || map[i][len_line - 1] != '1')
-			ft_exit_free(-1, map, NULL, "map not closed");
-		while (j < len_line)
+		if (data->map[i][0] != '1' || data->map[i][data->len_line - 1] != '1')
+			ft_exit_free(-1, data->map, NULL, "map not closed");
+		while (j < data->len_line)
 		{
-			check_first_last_line(i, j, map, nb_line);
-			check_cara(map[i][j], &perso, &end, &item);
+			check_first_last_line(i, j, data->map, data->nb_line);
+			check_cara(data->map[i][j], &perso, &end, &item);
 			j++;
 		}
 		i++;
 	}
 	if (perso == 0 || end == 0 || item == 0)
 		ft_exit_free(-1, NULL, NULL, "missing element");
+	data->nb_item = item;
 }

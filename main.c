@@ -6,27 +6,49 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 18:50:50 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:37:43 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft/libft.h"
 #include "so_long.h"
 
+void	init_data(t_data *data)
+{
+	data->len_line = 0;
+	data->nb_line = 0;
+	data->nb_move = 0;
+	data->nb_item = 0;
+	data->nb_collected = 0;
+	data->player_x = 0;
+	data->player_y = 0;
+}
+
 int	main(int ac, char **av)
 {
-	int		nb_line;
-	int		len_line;
-	char	**map;
+	t_data	data;
 
-	map = NULL;
-	nb_line = 0;
-	len_line = 0;
 	if (ac != 2)
 		return (0);
-	check_file_name(av[1]);
-	map = ft_parsing(av[1], map, &nb_line, &len_line);
-	manage_game(map, nb_line, len_line);
+	init_data(&data);
+	printf("nb_line = %d\n", data.nb_line);
+	printf("len_line = %d\n", data.len_line);
+	printf("nb_move = %d\n", data.nb_move);
+	printf("nb_item = %d\n", data.nb_item);
+	printf("nb_collected = %d\n", data.nb_collected);
+	printf("player_x = %d\n", data.player_x);
+	printf("player_y = %d\n", data.player_y);
+	check_file_name(av[1]); //✅
+	ft_parsing(av[1], &data);
+	print_map(data.map);
+	printf("nb_line = %d\n", data.nb_line);
+	printf("len_line = %d\n", data.len_line);
+	printf("nb_move = %d\n", data.nb_move);
+	printf("nb_item = %d\n", data.nb_item);
+	printf("nb_collected = %d\n", data.nb_collected);
+	printf("player_x = %d\n", data.player_x);
+	printf("player_y = %d\n", data.player_y);
+	manage_game(&data);
 	return (0);
 }
 // #include "./mlx/mlx.h"

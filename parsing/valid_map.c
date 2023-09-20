@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:11:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/18 11:17:49 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/19 17:26:21 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	flood_fill_call(char **temp, int *search, int *x, int *y)
 	}
 }
 
-void	valid_map(char **map, int nb_line, int len_line)
+void	valid_map(t_data *data)
 {
 	int		x;
 	int		y;
@@ -90,16 +90,18 @@ void	valid_map(char **map, int nb_line, int len_line)
 	x = 0;
 	y = 0;
 	i = 0;
-	temp = (char **)malloc(nb_line * sizeof(char *));
-	while (i < nb_line)
+	temp = (char **)malloc(data->nb_line * sizeof(char *));
+	while (i < data->nb_line)
 	{
-		temp[i] = (char *)malloc(len_line + 1);
-		ft_strncpy(temp[i], map[i], len_line);
+		temp[i] = (char *)malloc(data->len_line + 1);
+		ft_strncpy(temp[i], data->map[i], data->len_line);
 		i++;
 	}
-	search = search_element(map, &x, &y, 'P');
+	search = search_element(data->map, &x, &y, 'P');
+	data->player_x = x;
+	data->player_y = y;
 	if (search == 0)
-		ft_exit_free(-1, map, NULL, "map is not valid");
+		ft_exit_free(-1, data->map, NULL, "map is not valid");
 	flood_fill_call(temp, &search, &x, &y);
 	check_map_isvalid(temp);
 	ft_free_2d_array(temp);
