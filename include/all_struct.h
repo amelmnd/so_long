@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:51:51 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 15:41:32 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 16:08:34 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_data
 	int			nb_collected;
 	int			player_col;
 	int			player_line;
+	int			end_col;
+	int			end_line;
+	int			not_finish;
 	char		**map;
 }				t_data;
 
@@ -49,5 +52,12 @@ typedef struct s_image
 	int			endian;
 	int			line_len;
 }				t_image;
+
+typedef struct s_check
+{
+	int			perso;
+	int			end;
+	t_data		*data;
+}				t_check;
 
 #endif

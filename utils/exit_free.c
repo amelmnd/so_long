@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:09:26 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/16 16:52:13 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 17:07:28 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	ft_exit_free(int status, char **tab, char *str, char *message)
 		if (str)
 			ft_free_str(&str);
 		ft_printf("Error : %s\n", message);
-		if (errno)
-			perror(message);
+		// if (errno)
+		// 	perror(message);
 		exit(EXIT_FAILURE);
 	}
 }

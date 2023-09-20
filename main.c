@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 15:42:31 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 17:05:16 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_data(t_data *data)
 	data->nb_collected = 0;
 	data->player_line = 0;
 	data->player_col = 0;
+	data->not_finish = 0;
 }
 
 // typedef struct s_data
@@ -54,23 +55,9 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (0);
 	init_data(&data);
-	printf("nb_line = %d\n", data.nb_line);
-	printf("len_line = %d\n", data.len_line);
-	printf("nb_move = %d\n", data.nb_move);
-	printf("nb_item = %d\n", data.nb_item);
-	printf("nb_collected = %d\n", data.nb_collected);
-	printf("player_line = %d\n", data.player_line);
-	printf("player_col = %d\n", data.player_col);
 	check_file_name(av[1]); //✅
 	ft_parsing(av[1], &data);
 	print_map(data.map);
-	printf("nb_line = %d\n", data.nb_line);
-	printf("len_line = %d\n", data.len_line);
-	printf("nb_move = %d\n", data.nb_move);
-	printf("nb_item = %d\n", data.nb_item);
-	printf("nb_collected = %d\n", data.nb_collected);
-	printf("player_line = %d\n", data.player_line);
-	printf("player_col = %d\n", data.player_col);
 	// system("leaks so_long");
 	ft_game(&data);
 	// check_file_name(av[1]);

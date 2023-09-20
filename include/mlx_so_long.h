@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:53:03 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 15:27:51 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 15:45:36 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ void		print_img(t_window window, char *path, int x, int y);
 void		print_pixel(t_window window, int image_width, int image_heigth);
 
 // game
-int			check_position(t_data *data, char position);
-void		collect_item(char position, t_data *data);
+
 void		ft_move_up(t_data *data);
 void		ft_move_down(t_data *data);
 void		ft_move_left(t_data *data);
 void		ft_move_right(t_data *data);
+int			check_position(t_data *data, char position);
+void		collect_item(char position, t_data *data);
+void		is_finished(t_data *data, char position);
 
 #endif
