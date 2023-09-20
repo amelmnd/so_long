@@ -6,19 +6,19 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:22:44 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 11:20:31 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 10:53:45 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_window	new_game(int w, int h, char *str)
+t_window	new_game(t_data *data, int w, int h, char *str)
 {
 	void	*mlx_ptr;
 
 	//INIT PROGRAM
 	mlx_ptr = mlx_init();
-	return ((t_window){mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h});
+	return ((t_window){mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h, data});
 }
 
 t_image	new_img(int w, int h, t_window window)

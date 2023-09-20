@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:44:11 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 17:50:38 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/20 10:53:18 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,25 @@ void	manage_game(t_data *data)
 	len_line = data->len_line;
 	image_width = len_line * 100;
 	image_heigth = nb_line * 100;
-	window = new_game(image_width, image_heigth, "so_long");
+	window = new_game(data, image_width, image_heigth, "so_long");
 	//taille de la fenetre
 	if (!window.mlx_ptr || !window.win_ptr)
 		ft_exit_free(1, map, NULL, "Error\nmlx_init() failed\n");
 	//AFFICHER DES PIXELS
 	print_pixel(window, image_width, image_heigth);
 	//AFFICHER UNE IMAGE
-	print_img(window, "./game/flower.xpm", (10), (10)); //position dans l'ecran
+	print_img(window, "./game/flower.xpm", (10), (10));
+	//position dans l'ecran
 	//AFFICHER PLUSIEURS IMAGES
+	/*
 	// int i = 0;
 	// int j;
 	// printf("lenline = %d\n", data.lenline);
 	//
-	/* The `print_img` function is being called to display an image on the window. The image being
-	// displayed is located at the path "./game/flower.xpm". The image will be displayed at the
-	// coordinates (0, 0) on the window. */
 	// // print_img(window, "./game/flower.xpm", 0, 0);
 	// while (i < data.nbline)
 	// {
 	// 	print_img(window, "./game/flower.xpm", 0, i * 32);
-	// 	/* This code block is responsible for printing the flower image on the left and right sides of the
-	// 	game map. */
 	// 	if (i == 0 || i == data.nbline - 1)
 	// 	{
 	// 		j = 1;
@@ -60,7 +57,8 @@ void	manage_game(t_data *data)
 	// 		}
 	// 	}
 	// 	i++;
-	// }
+	// }*/
+	// system("leaks so_long");
 	mlx_hook(window.win_ptr, 2, 0, ft_keyboard_event, &window);
 	mlx_hook(window.win_ptr, 17, 0, ft_mouse_event, &window);
 	mlx_loop(window.mlx_ptr);
