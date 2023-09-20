@@ -31,9 +31,10 @@ SRCS_PARS =	$(DIR_PARS)check_map.c\
 DIR_GAME = game/
 SRCS_GAME =	$(DIR_GAME)create_window.c\
 			$(DIR_GAME)event.c\
-			$(DIR_GAME)manage_game.c\
+			$(DIR_GAME)ft_game.c\
 			$(DIR_GAME)draw_window.c\
 			$(DIR_GAME)move_player.c\
+			$(DIR_GAME)manage_game.c\
 
 # DIR_X = x/
 # SRCS_PARS =	$(DIR_X)y.c\
