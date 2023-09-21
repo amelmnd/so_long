@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 12:51:51 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:44:15 by amennad          ###   ########.fr       */
+/*   Created: 2023/09/21 10:58:52 by amennad           #+#    #+#             */
+/*   Updated: 2023/09/21 10:59:29 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_SO_LONG_H
-# define STRUCT_SO_LONG_H
-//TODO PROBLEME DE NORME
+#ifndef ALL_STRUCT_H
+# define ALL_STRUCT_H
 
 // structs
 typedef struct s_data

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_flood_fill.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 16:05:38 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 09:29:28 by amennad          ###   ########.fr       */
+/*   Created: 2023/09/21 10:43:52 by amennad           #+#    #+#             */
+/*   Updated: 2023/09/21 10:44:14 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "so_long.h"
 
-void	ft_parsing(char *file, t_data *data)
+void	ft_flood_fill(char **temp, int x, int y)
 {
-	int	fd1;
-	int	fd2;
+	if (temp[x][y] == '0' || temp[x][y] == 'C' || temp[x][y] == 'E')
+		temp[x][y] = 'F';
+}
 
-	fd1 = open(file, O_RDONLY);
-	fd2 = open(file, O_RDONLY);
-	if (fd1 == -1 || fd2 == -1)
-		ft_exit_free(-1, NULL, NULL, "open");
-	ft_file_length(fd1, data);
-	close(fd1);
-	data->map = (char **)malloc(sizeof(char *) * (data->nb_line + 1));
-	ft_create_multi_array(fd2, data);
-	check_map(data);
-	valid_map(data);
+void	flood_fill_call(char **temp, int *search, int *x, int *y)
+{
+	while (*search == 1)
+	{
+		ft_flood_fill(temp, *x + 1, *y);
+		ft_flood_fill(temp, *x - 1, *y);
+		ft_flood_fill(temp, *x, *y + 1);
+		ft_flood_fill(temp, *x, *y - 1);
+		*search = search_element(temp, x, y, 'F');
+	}
 }

@@ -6,18 +6,12 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:11:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 12:08:15 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 10:57:32 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "so_long.h"
-
-void	ft_flood_fill(char **temp, int x, int y)
-{
-	if (temp[x][y] == '0' || temp[x][y] == 'C' || temp[x][y] == 'E')
-		temp[x][y] = 'F';
-}
 
 int	search_element(char **map, int *col, int *row, char cara)
 {
@@ -67,15 +61,16 @@ void	check_map_isvalid(char **map)
 	}
 }
 
-void	flood_fill_call(char **temp, int *search, int *x, int *y)
+void	create_temp_array(t_data *data, char **temp, int i)
 {
-	while (*search == 1)
+	int	j;
+
+	j = 0;
+	temp[i] = (char *)calloc(data->len_line + 1, sizeof(char));
+	while (j < data->len_line)
 	{
-		ft_flood_fill(temp, *x + 1, *y);
-		ft_flood_fill(temp, *x - 1, *y);
-		ft_flood_fill(temp, *x, *y + 1);
-		ft_flood_fill(temp, *x, *y - 1);
-		*search = search_element(temp, x, y, 'F');
+		temp[i][j] = data->map[i][j];
+		j++;
 	}
 }
 
@@ -89,14 +84,10 @@ void	valid_map(t_data *data)
 
 	col = 0;
 	row = 0;
-	i = 0;
-	temp = (char **)malloc(data->nb_line * sizeof(char *));
-	while (i < data->nb_line)
-	{
-		temp[i] = (char *)malloc(data->len_line + 1);
-		ft_strncpy(temp[i], data->map[i], data->len_line);
-		i++;
-	}
+	i = -1;
+	temp = (char **)calloc(data->nb_line + 1, sizeof(char *));
+	while (++i < data->nb_line)
+		create_temp_array(data, temp, i);
 	search = search_element(data->map, &col, &row, 'P');
 	data->player_col = row;
 	data->player_line = col;

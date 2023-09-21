@@ -27,6 +27,7 @@ DIR_PARS = parsing/
 SRCS_PARS =	$(DIR_PARS)check_map.c\
 			$(DIR_PARS)valid_map.c\
 			$(DIR_PARS)ft_parsing.c\
+			$(DIR_PARS)ft_flood_fill.c\
 
 DIR_GAME = game/
 SRCS_GAME =	$(DIR_GAME)create_window.c\

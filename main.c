@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:43:42 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 10:31:25 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,10 @@ int	main(int ac, char **av)
 	init_data(&data);
 	check_file_name(av[1]); //✅
 	ft_parsing(av[1], &data);
+	printf("main ********\n");
 	print_map(data.map);
-	// system("leaks so_long");
-	ft_game(&data);
+	system("leaks so_long");
+	// ft_game(&data);
 	// check_file_name(av[1]);
 	// map = ft_parsing(av[1], map, &nb_line, &len_line);
 	// printf("main ********\n");

@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:43:44 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/19 17:51:11 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 10:50:24 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ int		check_file_name(char *file_name);
 void	ft_file_length(int fd, t_data *data);
 void	check_map(t_data *data);
 void	valid_map(t_data *data);
+void	ft_flood_fill(char **temp, int x, int y);
+void	flood_fill_call(char **temp, int *search, int *x, int *y);
+int		search_element(char **map, int *col, int *row, char cara);
 
 #endif
