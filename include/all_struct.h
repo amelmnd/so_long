@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:58:52 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 10:59:29 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 12:37:50 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_window
 	void		*win_ptr;
 	int			height;
 	int			width;
+	int			tile_size;
 	t_data		*data;
 }				t_window;
 
