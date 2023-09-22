@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:55:10 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/22 09:30:42 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:28:02 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ int	ft_keyboard_event(int keycode, t_window *window)
 		exit(EXIT_SUCCESS);
 	}
 	if (keycode == 13 || keycode == 126 || keycode == 6)
-		ft_move_up(window->data, &status);
+		ft_move_up(window, window->data, &status);
 	else if (keycode == 1 || keycode == 125)
-		ft_move_down(window->data, &status);
+		ft_move_down(window, window->data, &status);
 	else if (keycode == 0 || keycode == 123 || keycode == 12)
-		ft_move_left(window->data, &status);
+		ft_move_left(window, window->data, &status);
 	else if (keycode == 2 || keycode == 124)
-		ft_move_right(window->data, &status);
+		ft_move_right(window, window->data, &status);
 	design_gaming(window, status);
 	return (0);
 }

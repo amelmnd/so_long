@@ -30,15 +30,11 @@ SRCS_PARS =	$(DIR_PARS)check_map.c\
 			$(DIR_PARS)ft_flood_fill.c\
 
 DIR_GAME = game/
-SRCS_GAME =	$(DIR_GAME)create_window.c\
-			$(DIR_GAME)event.c\
+SRCS_GAME =	$(DIR_GAME)manage_game.c\
 			$(DIR_GAME)ft_game.c\
-			$(DIR_GAME)draw_window.c\
+			$(DIR_GAME)event.c\
 			$(DIR_GAME)move_player.c\
-			$(DIR_GAME)manage_game.c\
-
-# DIR_X = x/
-# SRCS_PARS =	$(DIR_X)y.c\
+			$(DIR_GAME)end_game.c\
 
 SRCS = $(SRCS_GNL) $(SRCS_UTILS) $(SRCS_PARS) $(SRCS_GAME) $(ORIGIN)
 OBJS = $(SRCS:.c=.o)

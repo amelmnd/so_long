@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:53:03 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 19:14:48 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:34:33 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,22 @@
 # include "mlx_so_long.h"
 # include "so_long.h"
 
-// prototypes
+// init game
 t_window	new_game(t_data *data, int tile_size, char *str);
-t_image		new_img(int w, int h, t_window window);
-void		put_pixel_img(t_image img, int x, int y, int color);
-
 void		ft_game(t_data *data);
 int			ft_mouse_event(t_window *window);
 int			ft_keyboard_event(int keycode, t_window *window);
 void		print_img(t_window window, char *path, int x, int y);
-void		print_pixel(t_window window, int image_width, int image_heigth);
+void		design_game(t_window *window);
 
 // game
-void		design_game(t_window *window);
-void		ft_move_up(t_data *data, char *status);
-void		ft_move_down(t_data *data, char *status);
-void		ft_move_left(t_data *data, char *status);
-void		ft_move_right(t_data *data, char *status);
+void		ft_move_up(t_window *window, t_data *data, char *status);
+void		ft_move_down(t_window *window, t_data *data, char *status);
+void		ft_move_left(t_window *window, t_data *data, char *status);
+void		ft_move_right(t_window *window, t_data *data, char *status);
 int			check_position(t_data *data, char position);
 void		collect_item(char position, t_data *data);
-void		is_finished(t_data *data, char position);
+void		loose_game(t_window *window);
+void		win_game(t_window *window);
 
 #endif

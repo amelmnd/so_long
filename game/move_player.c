@@ -6,18 +6,20 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:40:02 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 19:15:15 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:36:50 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_move_up(t_data *data, char *status)
+void	ft_move_up(t_window *window, t_data *data, char *status)
 {
 	char	position;
 
 	position = data->map[data->player_line - 1][data->player_col];
-	if (check_position(data, position) == 0)
+	if (position == 'A')
+		loose_game(window);
+	else if (check_position(data, position) == 0)
 		return ;
 	else if (check_position(data, position) == 1)
 	{
@@ -30,20 +32,19 @@ void	ft_move_up(t_data *data, char *status)
 		ft_printf("%d\n", data->nb_move);
 	}
 	else if (check_position(data, position) == -1)
-	{
-		printf("You win !\n");
-		exit(EXIT_SUCCESS);
-	}
+		win_game(window);
 	if (data->end_line != data->player_line
 		|| data->end_col != data->player_col)
 		data->map[data->end_line][data->end_col] = 'E';
 }
 
-void	ft_move_down(t_data *data, char *status)
+void	ft_move_down(t_window *window, t_data *data, char *status)
 {
 	char	position;
 
 	position = data->map[data->player_line + 1][data->player_col];
+	if (position == 'A')
+		loose_game(window);
 	if (check_position(data, position) == 0)
 		return ;
 	else if (check_position(data, position) == 1)
@@ -57,20 +58,19 @@ void	ft_move_down(t_data *data, char *status)
 		ft_printf("%d\n", data->nb_move);
 	}
 	else if (check_position(data, position) == -1)
-	{
-		printf("You win !\n");
-		exit(EXIT_SUCCESS);
-	}
+		win_game(window);
 	if (data->end_line != data->player_line
 		|| data->end_col != data->player_col)
 		data->map[data->end_line][data->end_col] = 'E';
 }
 
-void	ft_move_left(t_data *data, char *status)
+void	ft_move_left(t_window *window, t_data *data, char *status)
 {
 	char	position;
 
 	position = data->map[data->player_line][data->player_col - 1];
+	if (position == 'A')
+		loose_game(window);
 	if (check_position(data, position) == 0)
 		return ;
 	else if (check_position(data, position) == 1)
@@ -84,20 +84,19 @@ void	ft_move_left(t_data *data, char *status)
 		ft_printf("%d\n", data->nb_move);
 	}
 	else if (check_position(data, position) == -1)
-	{
-		printf("You win !\n");
-		exit(EXIT_SUCCESS);
-	}
+		win_game(window);
 	if (data->end_line != data->player_line
 		|| data->end_col != data->player_col)
 		data->map[data->end_line][data->end_col] = 'E';
 }
 
-void	ft_move_right(t_data *data, char *status)
+void	ft_move_right(t_window *window, t_data *data, char *status)
 {
 	char	position;
 
 	position = data->map[data->player_line][data->player_col + 1];
+	if (position == 'A')
+		loose_game(window);
 	if (check_position(data, position) == 0)
 		return ;
 	else if (check_position(data, position) == 1)
@@ -111,10 +110,7 @@ void	ft_move_right(t_data *data, char *status)
 		ft_printf("%d\n", data->nb_move);
 	}
 	else if (check_position(data, position) == -1)
-	{
-		printf("You win !\n");
-		exit(EXIT_SUCCESS);
-	}
+		win_game(window);
 	if (data->end_line != data->player_line
 		|| data->end_col != data->player_col)
 		data->map[data->end_line][data->end_col] = 'E';

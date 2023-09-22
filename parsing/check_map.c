@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:57:08 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 16:27:14 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:36:12 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	check_cara(char c, t_check *check, int i, int j)
 		ft_exit_free(-1, NULL, NULL, "too many end");
 	else if (c == 'C')
 		check->data->nb_item += 1;
-	else if (c != '0' && c != '1' && c != 'C' && c != 'E' && c != 'P')
+	else if (c != '0' && c != '1' && c != 'C'
+		&& c != 'E' && c != 'P' && c != 'A')
 		ft_exit_free(-1, NULL, NULL, "invalid character");
 }
 

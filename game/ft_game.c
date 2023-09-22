@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:44:11 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/22 09:26:46 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:04:32 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	print_tile(t_window *window, int i, int j, char c_check)
 		print_img(*window, "./assets/e.xpm", j * tile_size, i * tile_size);
 	else if (c_check == 'P')
 		print_img(*window, "./assets/p_down.xpm", j * tile_size, i * tile_size);
+	else if (c_check == 'A')
+		print_img(*window, "./assets/a.xpm", j * tile_size, i * tile_size);
 }
 
 void	design_game(t_window *window)
