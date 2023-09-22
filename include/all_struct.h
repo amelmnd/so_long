@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:58:52 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 12:37:50 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/22 09:20:37 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_data
 	int			nb_move;
 	int			nb_item;
 	int			nb_collected;
+	int			collected;
 	int			player_col;
 	int			player_line;
 	int			end_col;

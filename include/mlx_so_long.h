@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:53:03 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 12:38:31 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 19:14:48 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void		print_pixel(t_window window, int image_width, int image_heigth);
 
 // game
 void		design_game(t_window *window);
-void		ft_move_up(t_data *data);
-void		ft_move_down(t_data *data);
-void		ft_move_left(t_data *data);
-void		ft_move_right(t_data *data);
+void		ft_move_up(t_data *data, char *status);
+void		ft_move_down(t_data *data, char *status);
+void		ft_move_left(t_data *data, char *status);
+void		ft_move_right(t_data *data, char *status);
 int			check_position(t_data *data, char position);
 void		collect_item(char position, t_data *data);
 void		is_finished(t_data *data, char position);

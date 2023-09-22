@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:24:27 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/20 17:22:26 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 19:14:55 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	collect_item(char position, t_data *data)
 	if (position == 'C')
 	{
 		data->nb_collected += 1;
+		data->collected = 1;
 	}
 	if (data->nb_collected == data->nb_item)
 	{

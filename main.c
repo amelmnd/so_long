@@ -6,7 +6,7 @@
 /*   By: amennad <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:25:04 by amennad           #+#    #+#             */
-/*   Updated: 2023/09/21 12:35:47 by amennad          ###   ########.fr       */
+/*   Updated: 2023/09/21 19:12:25 by amennad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@ void	init_data(t_data *data)
 	data->nb_move = 0;
 	data->nb_item = 0;
 	data->nb_collected = 0;
+	data->collected = 0;
 	data->player_line = 0;
 	data->player_col = 0;
 	data->not_finish = 0;
 	data->nb_move = 0;
-
-
 }
 
 int	main(int ac, char **av)
@@ -39,7 +38,6 @@ int	main(int ac, char **av)
 	ft_parsing(av[1], &data);
 	printf("main ********\n");
 	print_map(data.map);
-	// system("leaks so_long");
 	ft_game(&data);
 	return (0);
 }
