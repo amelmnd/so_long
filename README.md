@@ -1,4 +1,4 @@
-<h1 align="center">So long</h1> 
+<h1 align="center">So Long</h1>
 <p align="center">
 	<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
 </p>
@@ -8,19 +8,18 @@
 
 - [Description](#description)
 - [Structure du projet](#structure-du-projet)
-- [Utilisation de push\_swap](#utilisation-de-push_swap)
-	- [Pre-requis](#pre-requis)
+- [Utilisation de so_long](#utilisation-de-so_long)
+	- [Pré-requis](#pre-requis)
 	- [Compilation du projet](#compilation-du-projet)
 	- [Exécution du projet](#exécution-du-projet)
 
-
 ## Description
 
-Le but de ce projet est de développer un programme permettant de trier des données entrées par l'utilisateur et de trier ces entiers (positifs et négatifs) dans une pile passée en paramètre par ordre croissant.
+Le but de ce projet est de développer un jeu 2D simple où un joueur doit collecter tous les items présents sur la carte, puis s’échapper en empruntant le chemin le plus court possible.
 
-Il n'est autorisé de n'utiliser que deux piles avec un ensemble d’instructions limité, et de réaliser le moins de coups possibles.
+Pour cela, il faut intégrer des textures, des sprites et quelques autres éléments tels que la gestion de la fenêtre, la gestion des événements, etc.
 
-Ce projet est le premier algorithme de tri que j'ai codé, et pour le faire j'ai utilisé l'algorithme Bubble Sort pour indexer les chiffres et je les ai ensuite triés à l'aide de l'algorithme Radix.
+Pour le côté graphique, ce sera l'occasion d'apprendre à intégrer une bibliothèque externe dans un projet. Pour cela, il faut utiliser la MiniLibX, qui est la bibliothèque graphique de l’école 42.
 
 ## Structure du projet
 ```tree
@@ -32,27 +31,34 @@ Ce projet est le premier algorithme de tri que j'ai codé, et pour le faire j'ai
 ├── parsing
 └── utils
 ```
-  
-- assets : images rendu sur la map
-- include et utils : fonctions necessaire au projet
-- mlx : librairie de rendu 3d
-- parsing : fonction de traitement des cartes jeux
-- gqame : fonction de gestion de jeux
-- sort : les fonstions de trie
 
-## Utilisation de push_swap
+- assets : textures et sprites
+- map : les cartes disponibles
+- include, utils et get_next_line : fonctions nécessaires au projet
+- mlx : bibliothèque graphique de l’école 42
+- parsing : fonctions de traitement et de vérification des inputs et des cartes de jeu
+- game : fonctions de gestion du jeu
+
+## Utilisation de so_long
 
 ### Pre-requis
 
 * **compilateur `gcc`**
-  
-### Compilation du projet 
+
+### Compilation du projet
 ```shell
 make
 ```
-### Exécution du projet 
+### Exécution du projet
 
 ```shell
 ./so_long map/*/*
 ```
-_valeur max gerer 500 nombres aléatoires, en maximum 5500 opérations_
+_Les maps sont triées par validité, et les valides sont de différentes tailles._
+```
+
+## Ressources utiles
+[  Documentation MiniLibX ](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
+
+## Testeur
+Aucun
