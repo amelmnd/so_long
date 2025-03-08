@@ -54,13 +54,13 @@ make
 ### Exécution du projet
 
 ```shell
-./so_long map/*/*
+./so_long map/<chose_folder>/<chose_map>
 ```
 _Les maps sont triées par validité, et les valides sont de différentes tailles._
-```
 
 ## Ressources utiles
-[  Documentation MiniLibX ](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
+
+[Documentation MiniLibX](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
 
 ## Testeur
 Aucun
