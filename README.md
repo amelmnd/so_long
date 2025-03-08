@@ -21,6 +21,8 @@ Pour cela, il faut intégrer des textures, des sprites et quelques autres élém
 
 Pour le côté graphique, ce sera l'occasion d'apprendre à intégrer une bibliothèque externe dans un projet. Pour cela, il faut utiliser la MiniLibX, qui est la bibliothèque graphique de l’école 42.
 
+Les bonus réalisés ici sont, le changement de visuel du personnage selon sa direction et l'ajout des ennemies
+
 ## Structure du projet
 ```tree
 ├── assets
